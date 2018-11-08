@@ -9,7 +9,7 @@ RIGHT = 1
 DOWN = 2
 LEFT = 3
 
-map = {
+vector_map = {
     UP: (-1,  0),
     RIGHT: ( 0,  1),
     DOWN: ( 1,  0),
@@ -176,7 +176,7 @@ class Env2048(gym.Env):
         return moved, reward
 
     def _get_vector(self, direction):
-        return map[direction]
+        return vector_map[direction]
 
     def _build_traversals(self, direction):
         rtravs = [i for i in range(self.size[0])]
